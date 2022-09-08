@@ -19,3 +19,13 @@ a {
 * {
   box-sizing: border-box;
 }
+
+.bage-yellow {
+  @apply bg-opacity-20 text-[#DD9E10] text-[13px]  mr-2 px-2.5 py-[5px] rounded bg-[#DD9E10];
+}
+.bage-info {
+  @apply bg-opacity-20 text-[#11A0DB] text-[13px]  mr-2 px-2.5 py-[5px] rounded bg-[#11A0DB];
+}
+.bage-purple {
+  @apply bg-opacity-20 text-[#874C72] text-[13px]  mr-2 px-2.5 py-[5px] rounded bg-[#874C72];
+}

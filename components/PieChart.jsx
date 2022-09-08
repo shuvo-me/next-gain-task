@@ -1,27 +1,53 @@
 import dynamic from "next/dynamic";
 import React from "react";
+import { api } from "../assets/data";
 
 const ApexPieChart = dynamic(() => import("react-apexcharts"), {
   ssr: false,
 });
 
-// const phoneFromeDaraz = api.filter(item=> item.seller_name == 'Daraz').length
+const totalPhones = api.length;
+const phoneFromeBikroy = api.filter(
+  (item) => item.ad_category == "Bikroy.com"
+).length;
+
+const phoneFromDarz = api.filter(
+  (item) => item.ad_category == "Daraz.com"
+).length;
+
+const phoneFromPickabo = api.filter(
+  (item) => item.ad_category == "Pickabo.com"
+).length;
+
+const getPercentage = (amount) => {
+  return (amount / totalPhones) * 100;
+};
+
+console.log({ phoneFromeBikroy, phoneFromDarz, phoneFromPickabo });
 const PieChart = () => {
   let chartOptions = {
-    series: [44, 55, 13],
+    series: [
+      getPercentage(phoneFromDarz),
+      getPercentage(phoneFromeBikroy),
+      getPercentage(phoneFromPickabo),
+    ],
     // colors: ["#F44336", "#E91E63", "#9C27B0"],
     options: {
       colors: ["#84AF27", "#0095A0", "#FFC239"],
       chart: {
         type: "pie",
       },
-      labels: ["Daraz", "Bikroi", "Pickabo"],
+      labels: [
+        `Daraz: ${Math.round(getPercentage(phoneFromDarz))}%`,
+        `Bikroi: ${Math.round(getPercentage(phoneFromeBikroy))}%`,
+        `Pickabo: ${Math.round(getPercentage(phoneFromPickabo))}%`,
+      ],
       responsive: [
         {
           breakpoint: 480,
           options: {
             chart: {
-              width: 200,
+              width: 500,
             },
             legend: {
               position: "bottom",
