@@ -6,14 +6,14 @@ const Header = () => {
   const dispatch = useDispatch();
   return (
     <header className="header bg-[#0095A0] py-2">
-      <div className="header-wrapper container mx-auto flex items-center justify-between">
+      <div className="header-wrapper md:container md:mx-auto xs:px-4 md:px-0 flex items-center justify-between">
         <div className="header-left">
           <div className="header-logo">
             <h2 className=" font-bold text-[31.4118px] text-white">LOGO</h2>
           </div>
         </div>
         <div className="header-right flex items-center gap-3">
-          <div className="header-search flex items-center border border-slate-50">
+          <div className="header-search  items-center border border-slate-50 xs:hidden md:flex">
             <input
               type="text"
               placeholder="Search by Title or Brand"

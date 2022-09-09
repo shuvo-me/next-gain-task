@@ -47,7 +47,7 @@ const PieChart = () => {
           breakpoint: 480,
           options: {
             chart: {
-              width: 500,
+              // width: 500,
             },
             legend: {
               position: "bottom",
