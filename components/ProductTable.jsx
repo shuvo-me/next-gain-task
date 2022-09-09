@@ -335,7 +335,7 @@ const ProductTable = () => {
                         </div>
                       </th>
                       <td className="py-4 px-6">{`${product.ram}/${product.storage}`}</td>
-                      <td className="py-4 px-6">
+                      <td className="py-4 px-6 flex items-center flex-wrap xs:gap-3 md:gap-0">
                         {isBestValue(product) && (
                           <span className=" bage-yellow ">Best Value</span>
                         )}
