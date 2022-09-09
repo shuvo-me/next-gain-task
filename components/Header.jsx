@@ -1,6 +1,9 @@
 import React from "react";
+import { useDispatch } from "react-redux";
+import { openModal } from "../store/modalSlice";
 
 const Header = () => {
+  const dispatch = useDispatch();
   return (
     <header className="header bg-[#0095A0] py-2">
       <div className="header-wrapper container mx-auto flex items-center justify-between">
@@ -34,7 +37,10 @@ const Header = () => {
             </button>
           </div>
           <div className="header-btn">
-            <button className=" bg-white px-2 py-[7px] text-[#0095A0] text-[14px]">
+            <button
+              className=" bg-white px-2 py-[7px] text-[#0095A0] text-[14px]"
+              onClick={() => dispatch(openModal())}
+            >
               Add Product
             </button>
           </div>

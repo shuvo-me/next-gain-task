@@ -1,3 +1,4 @@
+import AddProductModal from "../components/AddProductModal";
 import Charts from "../components/Charts";
 import Header from "../components/Header";
 import ProductTable from "../components/ProductTable";
@@ -8,6 +9,7 @@ export default function Home() {
       <Header />
       <Charts />
       <ProductTable />
+      <AddProductModal />
     </main>
   );
 }
