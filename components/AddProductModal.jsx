@@ -17,7 +17,7 @@ const AddProductModal = () => {
   //   console.log({ modalState.show });
   return (
     <div
-      className={`w-full p-10 pb-14 h-screen bg-slate-400 bg-opacity-40 fixed top-0 left-0 bottom-0 ${
+      className={`w-full overflow-y-auto p-10 pb-14 h-screen bg-slate-400 bg-opacity-40 fixed top-0 left-0 bottom-0 ${
         show ? " block" : " hidden"
       }`}
     >
